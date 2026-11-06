@@ -1,19 +1,56 @@
-body, html {
-    background-color: lightblue;
+body {
+    margin: 0;
+    background-image: url("images/pinkBkg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
 #main {
+
+    position: relative;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #videoStuff {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 50%;
+   position: absolute;
+
+   width: 350px;
+   height: 246px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 1;
+
+   margin-left: -117px;
+   margin-top: 30.5px;
+    
+}
+
+#cameraPic{
+
+    position: absolute;
+    width: 600px;
+    height: auto;
+    pointer-events: none;
+    z-index: 2;
+}
+
+#connect {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+#roomName {
+    position: absolute;
+    top: -2000px;
+    right: 120px;
+    z-index: 9;
 }

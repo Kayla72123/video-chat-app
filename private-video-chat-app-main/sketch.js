@@ -12,8 +12,8 @@ connect.addEventListener('click', function(e) {
 })
 
 function setup() {
-  cnv = createCanvas(400, 400);
-    cnv.parent(videoStuff)
+  cnv = createCanvas(350, 246);
+  cnv.parent(videoStuff)
 }
 
 function connectionStuff(roomName) {
@@ -29,18 +29,31 @@ function connectionStuff(roomName) {
 
 
 function draw() {
-  background(220);
+  background(20);
   stroke(255);
-  if (myVideo != null) {
-    image(myVideo,0,0,width/2,height);
-    text("My Video", 10, 10);
-  }
-  
 
-  if (otherVideo != null) {
-    image(otherVideo,width/2,0,width/2,height);
-    text("Their Video", width/2+10, 10);
-  }  
+  // if (myVideo != null) {
+  //   image(myVideo,0,0,width/2,height/2);
+  //   text("My Video", 10, 10);
+  // }
+
+  if (otherVideo == null) {
+
+    if (myVideo != null) {
+      image(myVideo,0,0,width,height);
+      text("My Video", 10, 10);
+    }
+  }  else {
+    if (myVideo != null) {
+      image(myVideo,0,0,width/2,height);
+      text("My Video", 10, 10);
+   }
+
+   image(otherVideo, width/2, 0, width/2, height);
+   text("Their Video", width/2 + 10, 10);
+  }
+
+
 }
 
 // We got a new stream!
